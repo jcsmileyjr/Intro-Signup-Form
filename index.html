@@ -74,6 +74,28 @@
       padding: 20px;
       border-radius: 10px;
     }
+
+    .form__input--style {
+      padding: 10px 5px;
+      text-indent: 10px;
+      color: var(--Neutral-Dark-Blue);
+      font-weight: bold;
+      border: .5px solid var(--Neutral-Grayish-Blue);
+    }
+
+    .form__submitButton--style {
+      color: white;
+      background-color: var(--Primary-Green);
+      padding: 10px 5px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      border: none;
+      border-radius: 5px;
+      box-shadow: 0px 4px 1px 0px rgba(50,168,117,0.75);
+      -webkit-box-shadow: 0px 4px 1px 0px rgba(50,168,117,0.75);
+      -moz-box-shadow: 0px 4px 1px 0px rgba(50,168,117,0.75);
+    }
+
   </style>
 </head>
   <body>
@@ -89,10 +111,10 @@
           <button type="button" class="form__CTAButton--style shadow"><span class="higherFont">Try it free 7 days</span> then <span class="wordWrapping">$20/mo. thereafter</span></button>
         </div>
         <form class="form__inputs--container shadow">
-          <input type="text" class="input__firstName--style" placeholder="First Name" />
-          <input type="text" class="input__lastName--style" placeholder="Last Name" />
-          <input type="text" class="input__email--style" placeholder="Email Address" />
-          <input type="text" class="input__password--style" placeholder="Password" />          
+          <input type="text" class="form__input--style input__firstName--style" placeholder="First Name" />
+          <input type="text" class="form__input--style input__lastName--style" placeholder="Last Name" />
+          <input type="text" class="form__input--style input__email--style" placeholder="Email Address" />
+          <input type="text" class="form__input--style input__password--style" placeholder="Password" />          
           <button type="submit" class="form__submitButton--style">Claim your free trial </button>
           <p class="form__content--style"> 
             By clicking the button, you are agreeing to our 
