@@ -23,7 +23,7 @@
       background-color: var(--Primary-Red);
     }
     main {
-      margin: 50px 15px 30px 15px;
+      margin: 10px 15px 30px 15px;
     }
     .content--container {
       color: white;
@@ -33,10 +33,33 @@
 
     .content__text--style {
       font-weight: 400;
+      color: whitesmoke;
     }
     .form__cta--container {
-      background-color: powderblue;
+      
     }
+
+    .form__CTAButton--style {
+      width: 100%;
+      background-color: var(--Accent-Blue);
+      padding: 20px 50px;
+      color: whitesmoke;
+      font-weight: 300;
+      line-height: 1.8em;
+      border-radius: 10px;
+      border: none;
+      margin-bottom: 25px;
+    }
+
+    .wordWrapping {
+      white-space: nowrap;
+    }
+
+    .higherFont {
+      color: white;
+      font-weight: 700;
+    }
+
     .form__inputs--container {
       background-color: greenyellow;
     }
@@ -52,7 +75,7 @@
       </div>
       <div class="form--container">
         <div class="form__cta--container">
-          <button type="button" class="form__CTAButton--style">Try it free 7 days then $20/mo. thereafter</button>
+          <button type="button" class="form__CTAButton--style"><span class="higherFont">Try it free 7 days</span> then <span class="wordWrapping">$20/mo. thereafter</span></button>
         </div>
         <form class="form__inputs--container">
           <input type="text" class="input__firstName--style" placeholder="First Name" />
