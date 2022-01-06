@@ -8,7 +8,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-
   <title>Frontend Mentor | Intro component with sign up form</title>
   <style>
     :root{
@@ -18,7 +17,6 @@
       --Neutral-Dark-Blue: hsl(249, 10%, 26%); 
       --Neutral-Grayish-Blue: hsl(246, 25%, 77%);
     }
-
     body {
       font-size: 16px;
       font-family: 'Poppins', sans-serif;
@@ -39,10 +37,26 @@
 </head>
   <body>
     <main>
-      <div class="content--container">Content</div>
+      <div class="content--container">
+        <h1>Learn to code by watching others</h1>
+        <p>See how experienced developers solve problems in real-time. Watching scripted tutorials is great, 
+          but understanding how developers think is invaluable.</p>
+      </div>
       <div class="form--container">
-        <div class="form__cta--container">CTA Button</div>
-        <div class="form__inputs--container">Form Inputs</div>
+        <div class="form__cta--container">
+          <button type="button" class="form__CTAButton--style">Try it free 7 days then $20/mo. thereafter</button>
+        </div>
+        <form class="form__inputs--container">
+          <input type="text" class="input__firstName--style" placeholder="First Name" />
+          <input type="text" class="input__lastName--style" placeholder="Last Name" />
+          <input type="text" class="input__email--style" placeholder="Email Address" />
+          <input type="text" class="input__password--style" placeholder="Password" />          
+          <button type="submit" class="form__submitButton--style">Claim your free trial </button>
+          <p class="form__content--style"> 
+            By clicking the button, you are agreeing to our 
+            <span class="form__terms--style">Terms and Services</span>
+          </p>
+        </form>
       </div>
     </main>    
   </body>
