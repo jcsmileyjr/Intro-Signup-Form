@@ -60,8 +60,19 @@
       font-weight: 700;
     }
 
+    .shadow {
+      box-shadow: 0px 6px 1px 0px rgba(252,65,65,0.75);
+      -webkit-box-shadow: 0px 6px 1px 0px rgba(252,65,65,0.75);
+      -moz-box-shadow: 0px 6px 1px 0px rgba(252,65,65,0.75);
+    }
+
     .form__inputs--container {
-      background-color: greenyellow;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
     }
   </style>
 </head>
@@ -75,9 +86,9 @@
       </div>
       <div class="form--container">
         <div class="form__cta--container">
-          <button type="button" class="form__CTAButton--style"><span class="higherFont">Try it free 7 days</span> then <span class="wordWrapping">$20/mo. thereafter</span></button>
+          <button type="button" class="form__CTAButton--style shadow"><span class="higherFont">Try it free 7 days</span> then <span class="wordWrapping">$20/mo. thereafter</span></button>
         </div>
-        <form class="form__inputs--container">
+        <form class="form__inputs--container shadow">
           <input type="text" class="input__firstName--style" placeholder="First Name" />
           <input type="text" class="input__lastName--style" placeholder="Last Name" />
           <input type="text" class="input__email--style" placeholder="Email Address" />
