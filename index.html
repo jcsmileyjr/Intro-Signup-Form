@@ -25,11 +25,22 @@
     main {
       margin: 10px 15px 30px 15px;
       font-size: 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+        align-items: center;
     }
     .content--container {
       color: white;
       text-align: center;
       margin-bottom: 20px;
+      flex:1;
+      max-width: 400px;
+    }
+
+    .form--container {
+      flex: 1;
+      max-width: 500px;
     }
 
     .content__text--style {
@@ -111,6 +122,23 @@
     .form__terms--style {
       color: var(--Primary-Red);
       font-weight: bold;
+    }
+
+    @media only screen and (min-width: 700px) {
+      body {
+        height: 100vh;
+      }
+      main {
+        flex-direction: row;
+        height: 100%;
+        max-width: 80%;
+        margin: auto;
+        gap: 40px;
+      }
+
+      .content--container {
+        text-align: left;
+      }
     }
 
   </style>
