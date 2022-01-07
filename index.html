@@ -124,6 +124,24 @@
       font-weight: bold;
     }
 
+    input:required:focus:valid {
+      border: .5px solid green;
+      outline-color: green;
+    }
+
+    input:required:focus:invalid {
+      border: .5px solid var(--Primary-Red);
+      outline-color: var(--Primary-Red);
+    }
+
+    input:invalid:not(:placeholder-shown) {
+      border: .5px solid red;
+    }
+
+    input:valid:not(:placeholder-shown) {
+      border: .5px solid green;
+    }
+
     @media only screen and (min-width: 700px) {
       body {
         height: 100vh;
@@ -164,10 +182,10 @@
           <button type="button" class="form__CTAButton--style shadow"><span class="higherFont">Try it free 7 days</span> then <span class="wordWrapping">$20/mo. thereafter</span></button>
         </div>
         <form class="form__inputs--container shadow">
-          <input type="text" class="form__input--style input__firstName--style" placeholder="First Name" />
-          <input type="text" class="form__input--style input__lastName--style" placeholder="Last Name" />
-          <input type="text" class="form__input--style input__email--style" placeholder="Email Address" />
-          <input type="text" class="form__input--style input__password--style" placeholder="Password" />          
+          <input required type="text" class="form__input--style input__firstName--style" placeholder="First Name" />
+          <input required type="text" class="form__input--style input__lastName--style" placeholder="Last Name" />
+          <input required type="email" class="form__input--style input__email--style" placeholder="Email Address" />
+          <input required type="password" class="form__input--style input__password--style" placeholder="Password" />          
           <button type="submit" class="form__submitButton--style">Claim your free trial </button>
           <p class="form__content--style"> 
             By clicking the button, you are agreeing to our 
