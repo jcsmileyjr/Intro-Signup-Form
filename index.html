@@ -129,17 +129,34 @@
       outline-color: green;
     }
 
-    input:required:focus:invalid {
+    .error, input:required:focus:invalid {
       border: .5px solid var(--Primary-Red);
       outline-color: var(--Primary-Red);
+      background-image: url("images/icon-error.svg");
+      background-position: 95% 15px;
+      background-repeat: no-repeat;
     }
 
     input:invalid:not(:placeholder-shown) {
       border: .5px solid red;
+      background-image: url("images/icon-error.svg");
+      background-position: 95% 15px;
+      background-repeat: no-repeat;
     }
 
     input:valid:not(:placeholder-shown) {
       border: .5px solid green;
+    }
+
+    .hide {
+      display: none;
+    }
+
+    .errorMessage {
+      color: var(--Primary-Red);
+      text-align: right;
+      width:100%;
+      margin-bottom:10px;
     }
 
     @media only screen and (min-width: 700px) {
@@ -182,11 +199,19 @@
           <button type="button" class="form__CTAButton--style shadow"><span class="higherFont">Try it free 7 days</span> then <span class="wordWrapping">$20/mo. thereafter</span></button>
         </div>
         <form class="form__inputs--container shadow">
-          <input required type="text" class="form__input--style input__firstName--style" placeholder="First Name" />
-          <input required type="text" class="form__input--style input__lastName--style" placeholder="Last Name" />
-          <input required type="email" class="form__input--style input__email--style" placeholder="Email Address" />
-          <input required type="password" class="form__input--style input__password--style" placeholder="Password" />          
-          <button type="submit" class="form__submitButton--style">Claim your free trial </button>
+          <input id="firstName" required type="text" class="form__input--style input__firstName--style" placeholder="First Name" />
+          <label for="firstName" class="errorMessage hide">First Name cannot be empty</label>
+
+          <input id="lastName" required type="text" class="form__input--style input__lastName--style" placeholder="Last Name" />
+          <label for="lastName" class="errorMessage hide">Last Name cannot be empty</label>
+          
+          <input id="email" required type="email" class="form__input--style input__email--style" placeholder="Email Address" />
+          <label for="email" class="errorMessage hide">Looks like this is not an email</label>
+
+          <input id="password" required type="password" class="form__input--style input__password--style" placeholder="Password" />          
+          <label for="password" class="errorMessage hide">Password cannot be empty</label>
+
+          <input type="submit" id="submitButton" class="form__submitButton--style" placeholder="Claim your free trial" />
           <p class="form__content--style"> 
             By clicking the button, you are agreeing to our 
             <span class="form__terms--style">Terms and Services</span>
@@ -195,4 +220,45 @@
       </div>
     </main>    
   </body>
+  <script>
+    const arrayOfInputs = document.getElementsByTagName("input");
+
+    /* When the user press submit, checks each input validity. If invalid, apply error style 
+    and show the error message */
+    document.getElementById("submitButton").addEventListener("click", function (e){
+      e.preventDefault();
+      Array.from(arrayOfInputs).forEach(function(element){
+        if(!element.checkValidity()){
+          element.classList.add("error");
+          let myLabel = findMyLabel(element.id);
+          myLabel.classList.remove("hide");
+        }
+      });
+    });
+
+    /* Whenever a user input data, the input field is validity is check for no errors and
+    remove error styles & messages if found */
+    Array.from(arrayOfInputs).forEach(function(element){
+      element.addEventListener('input', function (){
+        if(element.checkValidity() === true && element.classList.contains('error')){
+          element.classList.remove('error');
+          let myLabel = findMyLabel(element.id);
+          myLabel.classList.add("hide");
+        }
+      });
+    });
+    
+    // Function to find the error message linked to an input field
+    const labels = document.getElementsByTagName('label');
+    const findMyLabel = (inputID) => {
+      let findElement = false;
+      Array.from(labels).forEach(function (label){
+        if(label.htmlFor === inputID){
+          findElement = label;
+        }
+      });
+      return findElement
+    }
+
+  </script>
 </html>
