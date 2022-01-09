@@ -1,4 +1,4 @@
-#Learn to Code Sign Up Form with HTML, CSS, & JavaScript
+# Learn to Code Sign Up Form with HTML, CSS, & JavaScript
 
 ![Final Outcome](./images/error-message.PNG)
 
