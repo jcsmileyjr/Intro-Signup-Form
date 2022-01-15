@@ -11,7 +11,7 @@ This is a solution to the [Intro component with sign-up form on Frontend Mentor]
 ### Links
 
 - [Click to play with the Live site](https://jcsmileyjr.github.io/Intro-Signup-Form/)
-- [Work in Progress](https://dev.to/jcsmileyjr/frontend-challenge-10-four-card-feature-4cj6)
+- [Click to read the blog post for this project](https://dev.to/jcsmileyjr/frontend-challenge-11-intro-sign-up-form-4ake)
 
 ### Built with
 
